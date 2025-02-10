@@ -138,3 +138,10 @@ STATIC_ROOT  = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Essa é uma parte importe pois quando a gente for postar esse projeto em produção, a gente não quer que o debug esteja ativado ou visível
+# E isso não pode ir para o github, então vamos torna-lo invisivel para o github adcionando ao arquivo .gitignore
+try:
+    from project.local_settings import *
+except ImportError:
+    ...

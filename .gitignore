@@ -8,6 +8,7 @@ db.sqlite3
 media/
 static/
 pictures/
+project/local_settings.py
 
 *logo_hapvida_2.svg
 

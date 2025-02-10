@@ -123,9 +123,16 @@ LANGUAGES = [
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+# vamos agora criar o colectstatics
+STATIC_ROOT = BASE_DIR / 'static' # depois de rodar o collectstatics, ele vai criar a pasta static python manage.py collectstatic
 STATICFILES_DIRS = [
     BASE_DIR / 'base_static',
 ]
+
+
+# agora vamos criar a pasta media que é onde vamos armazenar os arquivos que o usuário vai enviar
+MEDIA_URL = 'media/'
+STATIC_ROOT  = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

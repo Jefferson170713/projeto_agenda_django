@@ -5,6 +5,9 @@
 __pycache__
 db.sqlite3
 
+media/
+static/
+
 *logo_hapvida_2.svg
 
 

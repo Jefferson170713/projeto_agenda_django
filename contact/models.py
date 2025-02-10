@@ -8,6 +8,7 @@ from django.utils import timezone
 # email (string de 100 caracteres)
 # data de criação (data e hora)
 # descrição (texto)
+# Isso será feito depois, que é a criação da coluna show
 
 class Contact(models.Model):
     first_name = models.CharField( max_length = 50 )
@@ -17,6 +18,8 @@ class Contact(models.Model):
     created_date = models.DateTimeField( default = timezone.now )
     description = models.TextField( blank = True)
 
+    show = models.BooleanField( default =  True )
+    picture = models.ImageField( upload_to = 'pictures/%Y/%m/%d/', blank = True) # instalar o pillow
     # Aqui vamos definir os campos que queremos que apareçam no painel de administração
     # Este é o campo que será exibido na lista de contatos, mas podemos mudar o que aparece no painel de administração
     def __str__( self ) -> str:

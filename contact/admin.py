@@ -19,5 +19,10 @@ class ContactAdmin( admin.ModelAdmin ):
     # liks para editar o contato
     list_display_links = ['id','first_name', 'last_name']
     # paginação dos das tabelas na página de administração
-    list_per_page = 5
-    list_max_show_all = 5
+    list_per_page = 25
+    list_max_show_all = 525
+
+@admin.register( models.Category )
+class CategoryAdmin( admin.ModelAdmin ):
+    list_display = 'id', 'name',
+    list_display_links = 'id', 'name',

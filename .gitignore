@@ -7,6 +7,7 @@ db.sqlite3
 
 media/
 static/
+pictures/
 
 *logo_hapvida_2.svg
 

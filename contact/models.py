@@ -20,5 +20,5 @@ class Contact(models.Model):
     # Aqui vamos definir os campos que queremos que apareçam no painel de administração
     # Este é o campo que será exibido na lista de contatos, mas podemos mudar o que aparece no painel de administração
     def __str__( self ) -> str:
-        #return super().__str__( f'{self.first_name} {self.last_name}' )
+        #return super().__str__()
         return f'{self.first_name} {self.last_name} - {self.email}'

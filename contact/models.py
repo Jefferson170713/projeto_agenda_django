@@ -32,7 +32,7 @@ class Contact(models.Model):
     description = models.TextField( blank = True)
 
     show = models.BooleanField( default =  True )
-    picture = models.ImageField( upload_to = 'pictures/%Y/%m/%d/', blank = True) # instalar o pillow
+    picture = models.ImageField( upload_to = 'pictures/%Y/%m', blank = True) # instalar o pillow
     # vamos criar a parte de conexão com a chave estrangeira
     # on_delete = models.DO_NOTHING, significa que se a categoria for deletada, os contatos não serão deletados
     category = models.ForeignKey( Category, on_delete = models.SET_NULL, blank = True, null = True) 

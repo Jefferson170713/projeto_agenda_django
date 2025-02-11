@@ -1,0 +1,48 @@
+{% extends "global/base_index.html" %}
+
+{% block titulo %}Projeto Agenda - Django{% endblock titulo %}
+
+{% block conteudo %}
+    
+    <div class="responsive-table">
+        <table class="contacts-table">
+            <caption class="table-caption">
+                <h2>Contatos</h2>
+            </caption>
+            <thead>
+                <tr class="table-row table-row-header">
+                    <th class="table-header">ID</th>
+                    <th class="table-header">FIRST_NAME</th>
+                    <th class="table-header">LAST_NAME</th>
+                    <th class="table-header">PHONE</th>
+                    <th class="table-header">E-MAIL</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for contact in contacts %}
+                    <tr class="table-row">
+                        <td class="table-cel">
+                            <a href="#" class="table-link">
+                                {{ contact.id }}
+                            </a>
+                        </td>
+                        <td class="table-cel">
+                            {{ contact.first_name }}
+                        </td>
+                        <td class="table-cel">
+                            {{ contact.last_name }}
+                        </td>
+                        <td class="table-cel">
+                            {{ contact.phone }}
+                        </td>
+                        <td class="table-cel">
+                            {{ contact.email }}
+                        </td>
+                    </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

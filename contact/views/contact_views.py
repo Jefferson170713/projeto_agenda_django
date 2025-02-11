@@ -7,7 +7,7 @@ def index(request):
     # Recebendo todos os contatos que temos no banco de dados e ordenando pelo id de forma decrescente
     #contacts = Contact.objects.all().order_by('-id')
     # filtrando os contatos que estão marcados como show=True, e pegando os 8 últimos
-    contacts = Contact.objects.filter( show=True).order_by('-id')[0:20] 
+    contacts = Contact.objects.filter( show=True ).order_by('-id')[0:20] 
     # O valores são passados para o template por meio de um dicionário
     context = {
         'contacts': contacts
@@ -26,5 +26,15 @@ def contact( request, contact_id ):
     }
     return render(
         request, 'contact/contact.html',
+        context
+    )
+
+def index_bootstrap ( requast ):
+    contacts = Contact.objects.filter( show=True ).order_by('-id')[0:20]
+    context = {
+        'contacts': contacts
+    }
+    return render(
+        requast, 'contact/index_bootstrap.html',
         context
     )

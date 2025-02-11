@@ -24,5 +24,6 @@ urlpatterns = [
     path('', include('contact.urls')),
     path('admin/', admin.site.urls),
 ]
+# isso aqui é para agente ter acesso as imagens que são salvas no banco de dados na pasta media diretamente, isso é para teste apenas
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

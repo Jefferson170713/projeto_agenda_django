@@ -1,5 +1,5 @@
-from django.db import models
-from django.utils import timezone
+from django.db import models # type: ignore 
+from django.utils import timezone # type: ignore 
 # Create your models here.
 # Criando as minha primeira tabela
 # primeiro nome (string de  50 caracteres)
@@ -11,7 +11,7 @@ from django.utils import timezone
 # Isso será feito depois, que é a criação da coluna show
 # vamos criar uma nova classe que será usado como chave estrangeira
 # para criar um owner para cada contato que for criado
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User # type: ignore 
 
 class Category(models.Model):
     # Aqui para mostrar o nome no painel de administração

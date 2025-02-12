@@ -12,13 +12,7 @@
     </title>
 </head>
 <body>
-    <header class="header">
-        <h1 class="header-heading">
-            <a href="{% url 'contact:index' %}" class="header-link">
-                Agenda
-            </a>
-        </h1>
-    </header>
+    {% include 'global/partials/_header.html' %}
     <main class="content">
         {% block conteudo %}{% endblock conteudo %}
     </main>

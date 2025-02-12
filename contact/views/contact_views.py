@@ -10,7 +10,8 @@ def index(request):
     contacts = Contact.objects.filter( show=True ).order_by('-id')[0:20] 
     # O valores são passados para o template por meio de um dicionário
     context = {
-        'contacts': contacts
+        'contacts': contacts,
+        'site_title': 'Contatos -'
     }
     return render(
         request, 'contact/index_site.html',
@@ -22,9 +23,10 @@ def contact( request, contact_id ):
     #single_contact = Contact.objects.get( pk = contact_id )
     # Vamos usar o get_object_or_404 para que se o contato não for encontrado, ele retorne um erro 404
     single_contact = get_object_or_404( Contact.objects, pk = contact_id, show = True )
-
+    site_title = f'{single_contact.first_name} {single_contact.last_name} -'
     context = {
-        'contact': single_contact
+        'contact': single_contact,
+        'site_title': site_title,
     }
     return render(
         request, 'contact/contact.html',
@@ -33,8 +35,10 @@ def contact( request, contact_id ):
 
 def index_bootstrap ( requast ):
     contacts = Contact.objects.filter( show=True ).order_by('-id')[0:20]
+    site_title = 'Contatos -'
     context = {
-        'contacts': contacts
+        'contacts': contacts,
+        'site_title': site_title,
     }
     return render(
         requast, 'contact/index_bootstrap.html',
@@ -44,6 +48,7 @@ def index_bootstrap ( requast ):
 def contact_bootstrap( request, contact_id ):
     try:
         single_contact = get_object_or_404( Contact.objects, id = contact_id, show = True )
+        site_title = f'{single_contact.first_name} {single_contact.last_name} -'
     except Http404:
         single_contact = {
             'first_name': 'Contato ',
@@ -55,9 +60,12 @@ def contact_bootstrap( request, contact_id ):
             'description': '-',
             'category' : None,
         }
+        site_title = 'Contato não encontrado -'
 
+    
     context = {
-        'contact': single_contact
+        'contact': single_contact,
+        'site_title': site_title,
     }
     return render(
         request, 'contact/contact_bootstrap.html',

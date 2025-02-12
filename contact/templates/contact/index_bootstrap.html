@@ -3,7 +3,7 @@
 
 {% block titulo %}Home - BootStrap{% endblock titulo %}
 
-{% block menu_site %}
+{% comment %} {% block menu_site %}
 <div class="container-fluid">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container">
@@ -42,7 +42,7 @@
         </div>
     </nav>
 </div>
-{% endblock menu_site %}
+{% endblock menu_site %} {% endcomment %}
 
 {% block conteudo %}
     
@@ -54,7 +54,7 @@
         </div>
         <div class="justify-content-center align-items-center">
             <div class="table-responsive text-center">
-                <table class="table table-striped table-hover table-bordered">
+                <table class="table table-striped table-hover table-bordered caption-top">
                     <thead class="tblase-dark opacity-40">
                         <tr>
                             <th>ID</th>
@@ -71,7 +71,7 @@
                         {% for contact in contacts %}
                             <tr>
                                 <td>
-                                    <a href="{% url 'contact:contact' contact.id %}" class="table-link text-decoration-none">
+                                    <a href="{% url 'contact:contact_bootstrap' contact.id %}" class="table-link text-decoration-none">
                                         <strong>{{ contact.id }}</strong>
                                     </a>
                                 </td>

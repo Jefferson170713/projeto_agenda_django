@@ -1,0 +1,18 @@
+{% extends "global/base_bootstrap.html" %}
+
+{% block titulo%}Pag Usuário BootStrap{% endblock %}
+{% block conteudo %}
+    <div class="container p-5">
+        <div class="container text-bg-secondary justify-content-center align-items-center p-5">
+            <h1 class="display-5">
+                {{ contact.first_name }} {{ contact.last_name }}
+            </h1>
+            <p class = 'lead'><b><strong>ID : </strong></b> {{ contact.id }}</p>
+            <p class = 'lead'><b><strong>E-mail : </strong></b> {{ contact.email }}</p>
+            <p class = 'lead'><b><strong>Phone : </strong></b> {{ contact.phone }}</p>
+            <p class = 'lead'><b><strong>Created Data : </strong></b> {{ contact.created_date }}</p>
+            <p class = 'lead'><b><strong>Description : </strong></b> {{ contact.description }}</p>
+            <p class = 'lead'><b><strong>Category : </strong></b> {{ contact.category.name }}</p>
+        </div>
+    </div>
+{% endblock conteudo %}

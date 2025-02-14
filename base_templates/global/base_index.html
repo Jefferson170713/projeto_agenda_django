@@ -1,15 +1,8 @@
-{% load static %}
+<!-- {% load static %} -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'global/css/css.css' %}">
-    <!-- <link rel="stylesheet" href="{% static 'global/bootstrap5/node_modules/bootstrap/dist/css/bootstrap.min.css' %}"> -->
-    <!-- <script src="{% static 'global/bootstrap5/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js' %}" defer></script> -->
-    <title>
-        {% block titulo %}Página inical{% endblock titulo %}
-    </title>
+    {% include 'global/partials/_head.html'%}
 </head>
 <body>
     {% include 'global/partials/_header.html' %}
